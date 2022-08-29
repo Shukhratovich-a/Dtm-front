@@ -1,0 +1,73 @@
+@import "../../../Scss/Variables.scss";
+
+.input {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  padding: 0;
+  padding-top: 10px;
+  padding-bottom: 13px;
+  font-weight: 500;
+  line-height: 24px;
+  color: $black;
+  border: none;
+  border-bottom: 1px solid $gray;
+  outline: none;
+  transition: color 0.25s ease, border-color 0.25s ease;
+
+  &::placeholder {
+    color: $gray;
+  }
+
+  &:focus {
+    border-color: $black;
+  }
+}
+
+.radio {
+  cursor: pointer;
+}
+
+.radio__input {
+  &:checked + .radio__controller {
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+.radio__controller {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 14px;
+  border: 2px solid $black;
+  border-radius: 50%;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: $black;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+}
+
+.radio__controller__text {
+  vertical-align: middle;
+  font-weight: 500;
+  line-height: 24px;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}

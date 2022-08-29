@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { useNavigate, useLocation, Routes, Route, NavigateFunction } from "react-router-dom";
 
-function App() {
+import useToken from "./Hooks/useToken";
+
+import Login from "./Pages/Login/Login";
+import Register from "./Pages/Register/Register";
+
+import "./App.scss";
+
+const App: React.FC = () => {
+  const navigate: NavigateFunction = useNavigate();
+  const { pathname }: { pathname: string } = useLocation();
+
+  const [token] = useToken();
+
+  React.useEffect(() => {
+    if (!token && pathname !== "/register" && pathname !== "/login") navigate("/login");
+  }, [token, navigate, pathname]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Routes>
+        <Route path={"/login"} element={<Login />} />
+        <Route path={"/register"} element={<Register />} />
+      </Routes>
     </div>
   );
-}
+};
 
 export default App;

@@ -1,0 +1,22 @@
+.navigation{
+  padding-top: 75px;
+}
+
+.navigation__button {
+  padding: 0;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 38px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  svg {
+    margin-right: 20px;
+  }
+
+  span {
+    vertical-align: middle;
+  }
+}

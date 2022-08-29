@@ -1,0 +1,30 @@
+@import "../../../Scss/Variables.scss";
+
+.select {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  padding: 0;
+  padding-top: 10px;
+  padding-bottom: 13px;
+  font-weight: 500;
+  line-height: 24px;
+  color: $black;
+  border: none;
+  border-bottom: 1px solid $gray;
+  outline: none;
+  background-image: url("../../../Assets/Icons/Marker.svg");
+  background-repeat: no-repeat;
+  background-size: 24px;
+  background-position: right 10px center;
+  transition: color 0.25s ease, border-color 0.25s ease;
+  appearance: none;
+
+  &::placeholder {
+    color: $gray;
+  }
+
+  &:focus {
+    border-color: $black;
+  }
+}
