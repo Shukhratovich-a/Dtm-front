@@ -6,12 +6,12 @@ import { HOST } from "../../config";
 import TextInput from "../Lib/Inputs/Text";
 import PasswordInut from "../Lib/Inputs/Password";
 import { Select, Option } from "../Lib/Select/Index";
+import RadioInput from "../Lib/Inputs/Radio";
+import Button from "../Lib/Button/Button";
 
 import Container from "../Container/Contianer";
 
 import styles from "./RegisterForm.module.scss";
-import RadioInput from "../Lib/Inputs/Radio";
-import Button from "../Lib/Button/Button";
 
 const RegisterForm: React.FC = () => {
   const [regions, setRegions] = React.useState<Region[] | []>([]);
@@ -70,7 +70,7 @@ const RegisterForm: React.FC = () => {
   };
 
   return (
-    <Container>
+    <Container className={`${styles.container}`}>
       <form className={`${styles.form}`} onSubmit={handleSubmit}>
         <h2 className={`${styles.form__heading}`}>Royhatdan otish</h2>
 
@@ -120,7 +120,9 @@ const RegisterForm: React.FC = () => {
           />
         </div>
 
-        <Button className={`${styles.form__button}`}>Royhatdan otish</Button>
+        <Button className={`${styles.form__button}`} type={"submit"}>
+          Royhatdan otish
+        </Button>
 
         <Link className={`${styles.form__link}`} to={"/login"}>
           Hisobingiz bormi? Kirish

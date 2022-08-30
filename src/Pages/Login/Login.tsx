@@ -1,11 +1,15 @@
 import Navigation from "../../Components/Navigation/Navigation";
+import RegisterForm from "../../Components/LoginForm/LoginForm";
 
-const Login = () => {
+import styles from "./Login.module.scss";
+
+const Register = () => {
   return (
-    <main>
-      <Navigation />
+    <main className={`${styles["main--register"]} main`}>
+      <Navigation className={`${styles.register__navigation}`} />
+      <RegisterForm />
     </main>
   );
 };
 
-export default Login;
+export default Register;
