@@ -1,7 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { HOST } from "../../config";
+
+import useToken from "../../Hooks/useToken";
 
 import TextInput from "../Lib/Inputs/Text";
 import PasswordInut from "../Lib/Inputs/Password";
@@ -12,6 +14,9 @@ import Container from "../Container/Contianer";
 import styles from "./LoginForm.module.scss";
 
 const RegisterForm: React.FC = () => {
+  const [, setToken] = useToken();
+  const navigate = useNavigate();
+
   const handleSubmit = (evt: React.SyntheticEvent) => {
     evt.preventDefault();
 
@@ -37,7 +42,10 @@ const RegisterForm: React.FC = () => {
 
       const data = await responce.json();
 
-      console.log(data);
+      if (data.status === 200) {
+        setToken(data.token);
+        navigate("/science");
+      }
     })();
   };
 

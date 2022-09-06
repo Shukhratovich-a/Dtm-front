@@ -1,0 +1,58 @@
+@import "../../Scss/Variables.scss";
+
+.heading {
+  font-weight: 500;
+  font-size: 35px;
+  line-height: 52px;
+  text-align: center;
+}
+
+.heading__text {
+  margin: 0;
+  margin-bottom: 65px;
+  font-weight: inherit;
+}
+
+.heading__steps {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.heading__step {
+  display: flex;
+  align-items: center;
+
+  span {
+    flex-shrink: 0;
+    width: 65px;
+    height: 65px;
+    padding: 6px;
+    border: 1px solid $borderGray;
+    border-radius: 50%;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  &--active {
+    span {
+      border-color: $blue;
+      box-shadow: 0px 0px 6px $blue;
+    }
+  }
+
+  & + & {
+    flex-grow: 1;
+
+    &::before {
+      display: inline-block;
+      content: "";
+      height: 1px;
+      width: 100%;
+      margin: 0 42px;
+      background-color: $borderGray;
+    }
+  }
+}

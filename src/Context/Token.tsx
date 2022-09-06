@@ -3,7 +3,9 @@ import React from "react";
 const Context = React.createContext<Token | null>(null);
 
 const Provider: React.FC<Props> = ({ children }) => {
-  const [token, setToken] = React.useState<string>("");
+  const [token, setToken] = React.useState<string>(
+    JSON.parse(window.localStorage.getItem("token") as string) || ""
+  );
 
   React.useEffect(() => {
     if (token) {

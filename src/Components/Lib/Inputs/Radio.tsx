@@ -2,7 +2,13 @@ import React from "react";
 
 import styles from "./Input.module.scss";
 
-const RadioInput: React.FC<Input & Props> = ({ className, value, name, label, defaultChecked }) => {
+const RadioInput: React.FC<Input & Props> = ({
+  className,
+  value,
+  name,
+  label,
+  defaultChecked = false,
+}) => {
   return (
     <label className={`${className} ${styles.radio}`}>
       <input

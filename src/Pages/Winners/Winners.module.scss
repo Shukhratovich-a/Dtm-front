@@ -1,0 +1,32 @@
+@import "../../Scss/Variables.scss";
+
+.winners__table {
+  background-color: #fcfcfc;
+  border-radius: 20px 20px 0px 0px;
+}
+
+.winners__headings {
+  margin: 0;
+}
+
+.winners__heading {
+  padding: 30px 0;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  text-align: left;
+
+  & + & {
+    .winners__heading__text {
+      border-left: 1px solid $gray;
+    }
+  }
+}
+
+.winners__heading__text {
+  padding: 0 25px;
+}
+
+.winners__table__row {
+  padding: 30px 0;
+}

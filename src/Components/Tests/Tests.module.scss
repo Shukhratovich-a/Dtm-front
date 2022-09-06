@@ -1,0 +1,72 @@
+@import "../../Scss/Variables.scss";
+
+.form__inner {
+  & + & {
+    margin-top: 60px;
+  }
+}
+
+.tests__heading {
+  margin: 0;
+  margin-bottom: 12px;
+  font-weight: 500;
+  font-size: 35px;
+  line-height: 52px;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}
+
+.tests__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.test {
+  & + & {
+    margin-top: 35px;
+    padding-top: 50px;
+    border-top: 1px solid rgba($color: $borderGray, $alpha: 0.5);
+  }
+}
+
+.test__top {
+  margin-bottom: 47px;
+}
+
+.test__heading {
+  margin: 0;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 40px;
+}
+
+.test__description {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 40px;
+}
+
+.test__variants {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.test__variant {
+  color: $blue;
+
+  span {
+    border-color: $blue;
+
+    &::before {
+      background-color: $blue;
+    }
+  }
+
+  & + & {
+    margin-top: 40px;
+  }
+}

@@ -5,8 +5,8 @@ import styles from "./Register.module.scss";
 
 const Register = () => {
   return (
-    <main className={`${styles['main--register']} main`}>
-      <Navigation className={`${styles.register__navigation}`} />
+    <main className={`${styles["main--register"]} main`}>
+      <Navigation className={`${styles.register__navigation}`} to={"/"} />
       <RegisterForm />
     </main>
   );

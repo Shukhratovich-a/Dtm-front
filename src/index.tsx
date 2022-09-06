@@ -3,6 +3,8 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 
 import { Provider as TokenProvider } from "./Context/Token";
+import { Provider as SelectedSciencesProvider } from "./Context/Sciences";
+import { Provider as SelectedDirectionsProvider } from "./Context/Direction";
 
 import App from "./App";
 
@@ -12,7 +14,11 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <TokenProvider>
-        <App />
+        <SelectedSciencesProvider>
+          <SelectedDirectionsProvider>
+            <App />
+          </SelectedDirectionsProvider>
+        </SelectedSciencesProvider>
       </TokenProvider>
     </BrowserRouter>
   </React.StrictMode>
