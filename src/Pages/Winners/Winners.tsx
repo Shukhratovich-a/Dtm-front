@@ -23,9 +23,7 @@ const Winners: React.FC = () => {
         setWinners(data.data);
       }
     })();
-  }, []);
-
-  console.log(winners);
+  }, [token]);
 
   return (
     <main className={`${styles["main--winners"]} main`}>
