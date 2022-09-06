@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 const Home: React.FC = () => {
   return (
     <main className={`${styles["main--home"]} main`}>
-      <Container>
+      <Container className={`${styles.container}`}>
         <Link className={`${styles.home__link}`} to={"/winners"}>
           <Button className={`${styles.home__button}`}>G'oliblar</Button>
         </Link>
