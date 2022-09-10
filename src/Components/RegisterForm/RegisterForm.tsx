@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { HOST } from "../../config";
 
@@ -12,9 +12,12 @@ import Button from "../Lib/Button/Button";
 import Container from "../Container/Contianer";
 
 import styles from "./RegisterForm.module.scss";
+import useToken from "../../Hooks/useToken";
 
 const RegisterForm: React.FC = () => {
   const [regions, setRegions] = React.useState<Region[] | []>([]);
+  const [, setToken] = useToken();
+  const navigate = useNavigate();
 
   React.useEffect(() => {
     (async () => {
@@ -65,7 +68,11 @@ const RegisterForm: React.FC = () => {
 
       const data = await responce.json();
 
-      console.log(data);
+      
+      if (data.status === 201) {
+        setToken(data.token);
+        navigate("/science");
+      }
     })();
   };
 
